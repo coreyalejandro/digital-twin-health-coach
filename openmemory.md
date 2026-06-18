@@ -21,7 +21,7 @@ A rebalanced safety build (SentinelOS governance, informed-consent model, 106 te
 
 ## Architecture
 
-```
+```text
 Browser (React SPA)
   ├── App.tsx — main dashboard, balance score engine, portal tabs
   ├── CaregiverDyadMonitor — caregiver-mother dyadic hub (consent-gated features)
@@ -59,7 +59,7 @@ External APIs
 ## Components
 
 | Component | Path | Purpose |
-|-----------|------|---------|
+| --------- | ---- | ------- |
 | **App** | `src/App.tsx` | Main UI: vitals sliders, environment card, balance score, 30-day charts, AI coach panel, preset scenarios, notifications |
 | **DigitalTwinVisualization** | `src/components/DigitalTwinVisualization.tsx` | Visual human body map with threat-system highlights |
 | **CaregiverDyadMonitor** | `src/components/CaregiverDyadMonitor.tsx` | Caregiver-mother dyadic portal: consent UI, mood journal, skin check, respite toolbox, HTML report export |
@@ -103,7 +103,7 @@ Three demo states: Optimal Homeostasis, Wildfire & Allergic Air Load, Severe Str
 ## Environment Variables
 
 | Variable | Required | Location | Notes |
-|----------|----------|----------|-------|
+| -------- | -------- | -------- | ----- |
 | `GEMINI_API_KEY` | For live AI | `.env.local` | Server reads via `dotenv`; health endpoint exposes `geminiConfigured` boolean only |
 | `APP_URL` | Optional | `.env.local` | AI Studio hosting URL |
 | `NODE_ENV` | Auto | — | `production` serves static `dist/` |
@@ -114,7 +114,7 @@ Three demo states: Optimal Homeostasis, Wildfire & Allergic Air Load, Severe Str
 ## Git History Notes
 
 | Commit | Description |
-|--------|-------------|
+| ------ | ----------- |
 | `ef305c2` | OpenMemory scaffold + gitignore Cursor rules |
 | `19818a7` | **Current main:** restored original AI Studio interface |
 | `c488dcd` | Rebalanced safety build (tests, SentinelOS) — preserved in history |

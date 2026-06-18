@@ -21,7 +21,7 @@
 
 ### Project Structure
 
-```
+```text
 dt-original/
 ├── server.ts              # Express API + Vite middleware
 ├── src/App.tsx            # Main dashboard (balance score, AI coach)
@@ -65,7 +65,7 @@ dt-original/
 ## 🔧 Available Commands
 
 | Command | Purpose |
-|---------|---------|
+| --------- | --------- |
 | `npm run dev` | Dev server (tsx + Vite HMR) |
 | `npm run build` | Production build |
 | `npm start` | Run production server |
