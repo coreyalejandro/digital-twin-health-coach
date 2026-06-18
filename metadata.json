@@ -1,6 +1,0 @@
-{
-  "name": "Digital Twin Health Coach",
-  "description": "A predictive health platform combining live local air quality/weather, real-time wearable vitals simulation, and personal homeostasis tracking with proactive Gemini coaching.",
-  "requestFramePermissions": ["geolocation"],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
