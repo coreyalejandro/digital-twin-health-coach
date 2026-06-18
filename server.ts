@@ -4,6 +4,8 @@ import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
 
+// README and AI Studio use .env.local; fall back to .env for other deployments.
+dotenv.config({ path: ".env.local" });
 dotenv.config();
 
 const app = express();
