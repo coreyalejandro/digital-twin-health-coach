@@ -5,9 +5,9 @@
 
 ## 📋 What Was Just Completed
 
-- Populated `openmemory.md` with full project index (architecture, components, patterns, env vars, git notes)
-- Verified GitHub `main` is at commit `ef305c2` (OpenMemory scaffold push)
-- Confirmed `.env.local` was never committed to git history; only `.env.example` exists remotely
+- Fixed markdownlint (MD040/MD060) in `HANDOFF.md` and `openmemory.md`
+- Fixed `server.ts` to load `GEMINI_API_KEY` from `.env.local` (was only reading `.env`)
+- Verified `/api/health` returns `geminiConfigured: true` after fix; journal-sentiment returns `API_KEY_INVALID` — key in `.env.local` needs replacement
 
 ## 🎯 Current Project State
 
@@ -34,9 +34,9 @@ dt-original/
 
 ## 🎯 Recommended Next Steps
 
-1. Add `GEMINI_API_KEY` to `.env.local` and verify live AI coaching (not demo fallbacks)
-2. Decide whether to revive safety build from `c488dcd` or continue evolving original prototype
-3. Add tests if moving toward production (safety build had 106 tests in history)
+1. Replace `GEMINI_API_KEY` in `.env.local` with a valid key from [Google AI Studio](https://aistudio.google.com/apikey), then restart `npm run dev`
+2. Re-test `/api/predictive/journal-sentiment` and coaching endpoints after key rotation
+3. Decide whether to revive safety build from `c488dcd` or continue evolving original prototype
 
 ## 📊 Remaining Enhancements to Implement
 
@@ -82,10 +82,10 @@ dt-original/
 - **Project:** Digital Twin Health Coach
 - **Repository:** coreyalejandro/digital-twin-health-coach
 - **Branch:** main
-- **Last Commit:** ef305c2 — "Add OpenMemory project guide and ignore IDE-specific rules."
+- **Last Commit:** 97dd2f3 — "Load GEMINI_API_KEY from .env.local on server startup."
 
 ---
 
-**Status:** OpenMemory guide populated; remote synced  
-**Recommendation:** Commit updated `openmemory.md`, then test with live Gemini key  
-**Confidence:** High — git history and GitHub API verified
+**Status:** Docs lint-clean; env loading fixed; Gemini key present but invalid  
+**Recommendation:** Rotate `GEMINI_API_KEY` in `.env.local`, restart dev server, re-test AI endpoints  
+**Confidence:** High — health endpoint and Gemini API error response verified locally

@@ -104,7 +104,7 @@ Three demo states: Optimal Homeostasis, Wildfire & Allergic Air Load, Severe Str
 
 | Variable | Required | Location | Notes |
 | -------- | -------- | -------- | ----- |
-| `GEMINI_API_KEY` | For live AI | `.env.local` | Server reads via `dotenv`; health endpoint exposes `geminiConfigured` boolean only |
+| `GEMINI_API_KEY` | For live AI | `.env.local` | Server loads `.env.local` then `.env` via dotenv; health endpoint exposes `geminiConfigured` boolean only |
 | `APP_URL` | Optional | `.env.local` | AI Studio hosting URL |
 | `NODE_ENV` | Auto | — | `production` serves static `dist/` |
 | `DISABLE_HMR` | Optional | — | Set `true` to disable Vite HMR (`vite.config.ts`) |
