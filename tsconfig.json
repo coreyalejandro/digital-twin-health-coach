@@ -1,26 +1,21 @@
 {
+  "//": "Editor/IDE configuration only. Node 24 runs .ts natively via strip-only type stripping; this file is NOT used at runtime. It enables type-checking in an editor and documents the strict posture the code is written to.",
   "compilerOptions": {
-    "target": "ES2022",
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false,
-    "module": "ESNext",
-    "lib": [
-      "ES2022",
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "allowJs": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "allowImportingTsExtensions": true,
-    "noEmit": true
-  }
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "lib": ["ES2023"],
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", "redteam/**/*.ts", "scripts/**/*.ts"]
 }

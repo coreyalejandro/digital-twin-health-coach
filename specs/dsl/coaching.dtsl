@@ -1,0 +1,18 @@
+# Digital Twin Specification Language (.dtsl) — coaching behaviour
+# Authored by clinical reviewers / UX researchers, NOT engineers (report H7).
+# Grammar: WHEN <conditions> THEN <actions>   (one rule per line; '#' = comment)
+# Rules are evaluated top-to-bottom; the first matching rule wins.
+
+# --- Safety boundaries (highest priority) ---
+WHEN tier = emergency THEN block escalate = crisis say = "This may be urgent. I'm connecting you to a human and crisis resources."
+WHEN tier = medical_advice THEN block escalate = clinician say = "That's a clinical question — I've routed it to your care team."
+WHEN distress THEN escalate = distress say = "This seems heavy. Let's get a human alongside you."
+WHEN risk THEN escalate = clinician
+
+# --- Coaching behaviours (wellness / information) ---
+WHEN tier = wellness AND topic ~ "sleep" THEN cite = kb:sleep-hygiene confidence = evidence_backed say = "Let's look gently at your wind-down routine."
+WHEN tier = wellness AND topic ~ "walk" THEN cite = kb:physical-activity confidence = evidence_backed
+WHEN tier = wellness AND topic ~ "habit" THEN cite = kb:com-b cite = kb:smart-goals confidence = evidence_backed
+WHEN tier = wellness AND topic ~ "stress" THEN cite = kb:stress-management confidence = evidence_backed
+WHEN tier = health_information THEN confidence = heuristic say = "Here's general information, grounded where I can. Not personal medical advice."
+WHEN tier = wellness THEN confidence = heuristic
